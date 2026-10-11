@@ -23,7 +23,7 @@ def seed_tactics():
             tactic = Tactic(id=tactic_id, name=tactic_name)
             if session.get(Tactic, tactic_id) is None:  # Check if the tactic already exists
                 session.add(tactic)
-            session.commit()
+        session.commit()
     print("Tactics seeded successfully.")
 
 if __name__ == "__main__":
