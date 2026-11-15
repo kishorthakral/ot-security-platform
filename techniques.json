@@ -1,0 +1,803 @@
+[
+  {
+    "id": "T0817",
+    "name": "Drive-by Compromise",
+    "tactics": [
+      "TA0108"
+    ],
+    "priority": "M",
+    "asset": "EWS",
+    "description": "User compromised simply by visiting a malicious or booby-trapped website."
+  },
+  {
+    "id": "T0819",
+    "name": "Exploit Public-Facing Application",
+    "tactics": [
+      "TA0108"
+    ],
+    "priority": "H",
+    "asset": "ITOT",
+    "description": "Internet-facing software or interface exploited for initial access."
+  },
+  {
+    "id": "T0866",
+    "name": "Exploitation of Remote Services",
+    "tactics": [
+      "TA0108",
+      "TA0109"
+    ],
+    "priority": "H",
+    "asset": "ITOT",
+    "description": "Software vulnerability exploited to abuse a remote service for access or movement."
+  },
+  {
+    "id": "T0822",
+    "name": "External Remote Services",
+    "tactics": [
+      "TA0108"
+    ],
+    "priority": "H",
+    "asset": "ITOT",
+    "description": "VPN, Citrix, or similar remote access gateways used as an entry point."
+  },
+  {
+    "id": "T0883",
+    "name": "Internet Accessible Device",
+    "tactics": [
+      "TA0108"
+    ],
+    "priority": "H",
+    "asset": "NET",
+    "description": "Device unintentionally exposed directly to the internet without protections."
+  },
+  {
+    "id": "T0886",
+    "name": "Remote Services",
+    "tactics": [
+      "TA0108",
+      "TA0109"
+    ],
+    "priority": "H",
+    "asset": "ITOT",
+    "description": "RDP, SSH, SMB or similar used to move between OT assets and segments."
+  },
+  {
+    "id": "T0847",
+    "name": "Replication Through Removable Media",
+    "tactics": [
+      "TA0108"
+    ],
+    "priority": "H",
+    "asset": "EWS",
+    "description": "Malware carried into an air-gapped environment via USB or removable media."
+  },
+  {
+    "id": "T0848",
+    "name": "Rogue Master",
+    "tactics": [
+      "TA0108"
+    ],
+    "priority": "C",
+    "asset": "NET",
+    "description": "Adversary stands up a fake master/controller to send legitimate-looking commands."
+  },
+  {
+    "id": "T0865",
+    "name": "Spearphishing Attachment",
+    "tactics": [
+      "TA0108"
+    ],
+    "priority": "H",
+    "asset": "GEN",
+    "description": "Malicious file attached to a targeted email to gain initial execution."
+  },
+  {
+    "id": "T0862",
+    "name": "Supply Chain Compromise",
+    "tactics": [
+      "TA0108"
+    ],
+    "priority": "H",
+    "asset": "FW",
+    "description": "Products, software, or delivery mechanisms tampered with before reaching the target."
+  },
+  {
+    "id": "T0864",
+    "name": "Transient Cyber Asset",
+    "tactics": [
+      "TA0108"
+    ],
+    "priority": "M",
+    "asset": "EWS",
+    "description": "Temporary vendor/contractor laptops or devices brought into the OT environment."
+  },
+  {
+    "id": "T0860",
+    "name": "Wireless Compromise",
+    "tactics": [
+      "TA0108"
+    ],
+    "priority": "M",
+    "asset": "NET",
+    "description": "Unauthorized access gained via a compromised wireless device or network."
+  },
+  {
+    "id": "T0895",
+    "name": "Autorun Image",
+    "tactics": [
+      "TA0104"
+    ],
+    "priority": "M",
+    "asset": "EWS",
+    "description": "AutoRun/AutoPlay abused to execute malicious code from removable media."
+  },
+  {
+    "id": "T0858",
+    "name": "Change Operating Mode",
+    "tactics": [
+      "TA0104",
+      "TA0103"
+    ],
+    "priority": "H",
+    "asset": "PLC",
+    "description": "Controller operating mode switched to enable unauthorized programming access."
+  },
+  {
+    "id": "T0807",
+    "name": "Command-Line Interface",
+    "tactics": [
+      "TA0104"
+    ],
+    "priority": "M",
+    "asset": "GEN",
+    "description": "CLI used to interact with and execute commands on a system."
+  },
+  {
+    "id": "T0871",
+    "name": "Execution through API",
+    "tactics": [
+      "TA0104"
+    ],
+    "priority": "M",
+    "asset": "PLC",
+    "description": "Control-system APIs called directly to trigger device-level functions."
+  },
+  {
+    "id": "T0823",
+    "name": "Graphical User Interface",
+    "tactics": [
+      "TA0104"
+    ],
+    "priority": "M",
+    "asset": "HMI",
+    "description": "GUI access used instead of CLI to enhance interactive execution."
+  },
+  {
+    "id": "T0874",
+    "name": "Hooking",
+    "tactics": [
+      "TA0104",
+      "TA0111"
+    ],
+    "priority": "M",
+    "asset": "GEN",
+    "description": "API calls intercepted and redirected for execution or privilege escalation."
+  },
+  {
+    "id": "T0821",
+    "name": "Modify Controller Tasking",
+    "tactics": [
+      "TA0104"
+    ],
+    "priority": "H",
+    "asset": "PLC",
+    "description": "Controller task scheduling altered to run adversary-supplied logic."
+  },
+  {
+    "id": "T0834",
+    "name": "Native API",
+    "tactics": [
+      "TA0104"
+    ],
+    "priority": "M",
+    "asset": "GEN",
+    "description": "OS-level APIs called directly to access low-level system functions."
+  },
+  {
+    "id": "T0853",
+    "name": "Scripting",
+    "tactics": [
+      "TA0104"
+    ],
+    "priority": "M",
+    "asset": "GEN",
+    "description": "Scripting languages used to execute arbitrary adversary-supplied code."
+  },
+  {
+    "id": "T0863",
+    "name": "User Execution",
+    "tactics": [
+      "TA0104"
+    ],
+    "priority": "H",
+    "asset": "GEN",
+    "description": "Victim interaction (open, click, grant permission) triggers malicious execution."
+  },
+  {
+    "id": "T1694",
+    "name": "Insecure Credentials",
+    "tactics": [
+      "TA0110",
+      "TA0109"
+    ],
+    "priority": "H",
+    "asset": "FW",
+    "description": "Default or hardcoded vendor credentials left unchanged on devices."
+  },
+  {
+    "id": "T1693",
+    "name": "Modify Firmware",
+    "tactics": [
+      "TA0110",
+      "TA0107",
+      "TA0106"
+    ],
+    "priority": "C",
+    "asset": "FW",
+    "description": "Malicious or vulnerable firmware installed on a system or module."
+  },
+  {
+    "id": "T0889",
+    "name": "Modify Program",
+    "tactics": [
+      "TA0110"
+    ],
+    "priority": "C",
+    "asset": "PLC",
+    "description": "Controller program altered to change interaction with the physical process."
+  },
+  {
+    "id": "T0873",
+    "name": "Project File Infection",
+    "tactics": [
+      "TA0110"
+    ],
+    "priority": "H",
+    "asset": "EWS",
+    "description": "Engineering project files infected to propagate malicious logic to PLCs."
+  },
+  {
+    "id": "T0859",
+    "name": "Valid Accounts",
+    "tactics": [
+      "TA0110",
+      "TA0109"
+    ],
+    "priority": "H",
+    "asset": "GEN",
+    "description": "Stolen legitimate credentials used to bypass access controls."
+  },
+  {
+    "id": "T0890",
+    "name": "Exploitation for Privilege Escalation",
+    "tactics": [
+      "TA0111"
+    ],
+    "priority": "H",
+    "asset": "GEN",
+    "description": "Software vulnerability exploited to run code with elevated permissions."
+  },
+  {
+    "id": "T0820",
+    "name": "Exploitation for Evasion",
+    "tactics": [
+      "TA0103"
+    ],
+    "priority": "M",
+    "asset": "GEN",
+    "description": "Vulnerability exploited specifically to disable or bypass security controls."
+  },
+  {
+    "id": "T0872",
+    "name": "Indicator Removal on Host",
+    "tactics": [
+      "TA0103"
+    ],
+    "priority": "M",
+    "asset": "GEN",
+    "description": "Logs, files, or artifacts altered or deleted to cover tracks."
+  },
+  {
+    "id": "T0849",
+    "name": "Masquerading",
+    "tactics": [
+      "TA0103"
+    ],
+    "priority": "M",
+    "asset": "GEN",
+    "description": "Malicious files disguised as legitimate vendor executables or configs."
+  },
+  {
+    "id": "T0851",
+    "name": "Rootkit",
+    "tactics": [
+      "TA0103",
+      "TA0107"
+    ],
+    "priority": "H",
+    "asset": "GEN",
+    "description": "Rootkit hides programs, files, services, or connections from detection."
+  },
+  {
+    "id": "T0894",
+    "name": "System Binary Proxy Execution",
+    "tactics": [
+      "TA0103"
+    ],
+    "priority": "M",
+    "asset": "GEN",
+    "description": "Trusted signed binaries abused to proxy execution of malicious content."
+  },
+  {
+    "id": "T1692",
+    "name": "Unauthorized Message",
+    "tactics": [
+      "TA0103",
+      "TA0106"
+    ],
+    "priority": "C",
+    "asset": "NET",
+    "description": "Spoofed command or reporting messages injected to evade or manipulate."
+  },
+  {
+    "id": "T0840",
+    "name": "Network Connection Enumeration",
+    "tactics": [
+      "TA0102"
+    ],
+    "priority": "M",
+    "asset": "NET",
+    "description": "Device communication patterns mapped to understand network roles."
+  },
+  {
+    "id": "T0842",
+    "name": "Network Sniffing",
+    "tactics": [
+      "TA0102"
+    ],
+    "priority": "M",
+    "asset": "NET",
+    "description": "Network interface used to passively capture traffic and reconnaissance data."
+  },
+  {
+    "id": "T0846",
+    "name": "Remote System Discovery",
+    "tactics": [
+      "TA0102"
+    ],
+    "priority": "M",
+    "asset": "NET",
+    "description": "Hosts on the network enumerated by IP, hostname, or identifier."
+  },
+  {
+    "id": "T0888",
+    "name": "Remote System Information Discovery",
+    "tactics": [
+      "TA0102"
+    ],
+    "priority": "M",
+    "asset": "NET",
+    "description": "Make, model, role, and configuration of remote systems gathered."
+  },
+  {
+    "id": "T0887",
+    "name": "Wireless Sniffing",
+    "tactics": [
+      "TA0102",
+      "TA0100"
+    ],
+    "priority": "M",
+    "asset": "NET",
+    "description": "RF communications captured for remote control and reporting protocols."
+  },
+  {
+    "id": "T0867",
+    "name": "Lateral Tool Transfer",
+    "tactics": [
+      "TA0109"
+    ],
+    "priority": "H",
+    "asset": "NET",
+    "description": "Tools or files copied between internal systems to support movement."
+  },
+  {
+    "id": "T0843",
+    "name": "Program Download",
+    "tactics": [
+      "TA0109"
+    ],
+    "priority": "C",
+    "asset": "PLC",
+    "description": "A user program transferred to a controller, overwriting logic."
+  },
+  {
+    "id": "T0830",
+    "name": "Adversary-in-the-Middle",
+    "tactics": [
+      "TA0100"
+    ],
+    "priority": "H",
+    "asset": "NET",
+    "description": "Network traffic intercepted and modified in real time (e.g. ARP poisoning)."
+  },
+  {
+    "id": "T0802",
+    "name": "Automated Collection",
+    "tactics": [
+      "TA0100"
+    ],
+    "priority": "M",
+    "asset": "NET",
+    "description": "Scripts or tools used to automatically harvest ICS environment data."
+  },
+  {
+    "id": "T0811",
+    "name": "Data from Information Repositories",
+    "tactics": [
+      "TA0100"
+    ],
+    "priority": "M",
+    "asset": "HIST",
+    "description": "Design documents, schematics, or process data pulled from repositories."
+  },
+  {
+    "id": "T0893",
+    "name": "Data from Local System",
+    "tactics": [
+      "TA0100"
+    ],
+    "priority": "M",
+    "asset": "EWS",
+    "description": "Local files, configs, or databases targeted and collected."
+  },
+  {
+    "id": "T0868",
+    "name": "Detect Operating Mode",
+    "tactics": [
+      "TA0100"
+    ],
+    "priority": "M",
+    "asset": "PLC",
+    "description": "Current PLC operating mode gathered to assess reprogramming feasibility."
+  },
+  {
+    "id": "T0877",
+    "name": "I/O Image",
+    "tactics": [
+      "TA0100"
+    ],
+    "priority": "M",
+    "asset": "PLC",
+    "description": "PLC input/output image table values captured for process insight."
+  },
+  {
+    "id": "T0801",
+    "name": "Monitor Process State",
+    "tactics": [
+      "TA0100"
+    ],
+    "priority": "M",
+    "asset": "HIST",
+    "description": "Physical process state information gathered via OPC tags, historian, or network."
+  },
+  {
+    "id": "T0861",
+    "name": "Point & Tag Identification",
+    "tactics": [
+      "TA0100"
+    ],
+    "priority": "M",
+    "asset": "HIST",
+    "description": "Process points and tags collected to understand environment layout."
+  },
+  {
+    "id": "T0845",
+    "name": "Program Upload",
+    "tactics": [
+      "TA0100"
+    ],
+    "priority": "H",
+    "asset": "PLC",
+    "description": "Existing PLC program uploaded to study the underlying control logic."
+  },
+  {
+    "id": "T0852",
+    "name": "Screen Capture",
+    "tactics": [
+      "TA0100"
+    ],
+    "priority": "M",
+    "asset": "HMI",
+    "description": "Screenshots taken of HMI or workstation displays to study operations."
+  },
+  {
+    "id": "T0885",
+    "name": "Commonly Used Port",
+    "tactics": [
+      "TA0101"
+    ],
+    "priority": "M",
+    "asset": "NET",
+    "description": "Common ports used for C2 to blend in with normal traffic."
+  },
+  {
+    "id": "T0884",
+    "name": "Connection Proxy",
+    "tactics": [
+      "TA0101"
+    ],
+    "priority": "M",
+    "asset": "NET",
+    "description": "Proxy used as an intermediary to direct and disguise C2 traffic."
+  },
+  {
+    "id": "T0869",
+    "name": "Standard Application Layer Protocol",
+    "tactics": [
+      "TA0101"
+    ],
+    "priority": "H",
+    "asset": "NET",
+    "description": "Protocols like HTTP, OPC, DNP3 or Modbus abused for C2 channels."
+  },
+  {
+    "id": "T0800",
+    "name": "Activate Firmware Update Mode",
+    "tactics": [
+      "TA0107"
+    ],
+    "priority": "C",
+    "asset": "FW",
+    "description": "Update mode forced on a device to halt its normal response functions."
+  },
+  {
+    "id": "T0878",
+    "name": "Alarm Suppression",
+    "tactics": [
+      "TA0107"
+    ],
+    "priority": "C",
+    "asset": "SAFE",
+    "description": "Protection function alarms targeted to prevent operator notification."
+  },
+  {
+    "id": "T1695",
+    "name": "Block Communications",
+    "tactics": [
+      "TA0107"
+    ],
+    "priority": "C",
+    "asset": "NET",
+    "description": "Serial, Ethernet, or Wi-Fi comms blocked to disrupt reporting/command paths."
+  },
+  {
+    "id": "T1691",
+    "name": "Block Operational Technology Message",
+    "tactics": [
+      "TA0107"
+    ],
+    "priority": "C",
+    "asset": "NET",
+    "description": "Command or reporting messages blocked from reaching their target."
+  },
+  {
+    "id": "T0892",
+    "name": "Change Credential",
+    "tactics": [
+      "TA0107"
+    ],
+    "priority": "H",
+    "asset": "FW",
+    "description": "Device credentials modified to lock out operators and responders."
+  },
+  {
+    "id": "T0809",
+    "name": "Data Destruction",
+    "tactics": [
+      "TA0107"
+    ],
+    "priority": "H",
+    "asset": "GEN",
+    "description": "Files or data destroyed, often to cover tracks or disrupt recovery."
+  },
+  {
+    "id": "T0814",
+    "name": "Denial of Service",
+    "tactics": [
+      "TA0107"
+    ],
+    "priority": "C",
+    "asset": "NET",
+    "description": "Device overwhelmed or crashed, rendering it unresponsive to events."
+  },
+  {
+    "id": "T0816",
+    "name": "Device Restart/Shutdown",
+    "tactics": [
+      "TA0107"
+    ],
+    "priority": "C",
+    "asset": "PLC",
+    "description": "Device forcibly restarted or shut down to disrupt physical processes."
+  },
+  {
+    "id": "T0835",
+    "name": "Manipulate I/O Image",
+    "tactics": [
+      "TA0107"
+    ],
+    "priority": "C",
+    "asset": "PLC",
+    "description": "PLC I/O image table overridden via direct memory manipulation."
+  },
+  {
+    "id": "T0838",
+    "name": "Modify Alarm Settings",
+    "tactics": [
+      "TA0107"
+    ],
+    "priority": "C",
+    "asset": "SAFE",
+    "description": "Alarm thresholds or settings changed to prevent expected notifications."
+  },
+  {
+    "id": "T0881",
+    "name": "Service Stop",
+    "tactics": [
+      "TA0107"
+    ],
+    "priority": "H",
+    "asset": "GEN",
+    "description": "Critical services disabled to prevent incident response or recovery."
+  },
+  {
+    "id": "T0806",
+    "name": "Brute Force I/O",
+    "tactics": [
+      "TA0106"
+    ],
+    "priority": "H",
+    "asset": "PLC",
+    "description": "I/O point values repeatedly changed to destabilize a process function."
+  },
+  {
+    "id": "T0836",
+    "name": "Modify Parameter",
+    "tactics": [
+      "TA0106"
+    ],
+    "priority": "C",
+    "asset": "PLC",
+    "description": "Device parameters altered to change how and when actions execute."
+  },
+  {
+    "id": "T0879",
+    "name": "Damage to Property",
+    "tactics": [
+      "TA0105"
+    ],
+    "priority": "C",
+    "asset": "SAFE",
+    "description": "Physical damage caused to infrastructure, equipment, or the environment."
+  },
+  {
+    "id": "T0813",
+    "name": "Denial of Control",
+    "tactics": [
+      "TA0105"
+    ],
+    "priority": "C",
+    "asset": "HMI",
+    "description": "Operators and engineers temporarily prevented from interacting with controls."
+  },
+  {
+    "id": "T0815",
+    "name": "Denial of View",
+    "tactics": [
+      "TA0105"
+    ],
+    "priority": "C",
+    "asset": "HMI",
+    "description": "Operator oversight disrupted by interrupting the HMI/control interface."
+  },
+  {
+    "id": "T0826",
+    "name": "Loss of Availability",
+    "tactics": [
+      "TA0105"
+    ],
+    "priority": "C",
+    "asset": "GEN",
+    "description": "Essential components disrupted, preventing delivery of products or services."
+  },
+  {
+    "id": "T0827",
+    "name": "Loss of Control",
+    "tactics": [
+      "TA0105"
+    ],
+    "priority": "C",
+    "asset": "HMI",
+    "description": "Sustained loss of control achieved; operators cannot issue commands."
+  },
+  {
+    "id": "T0828",
+    "name": "Loss of Productivity and Revenue",
+    "tactics": [
+      "TA0105"
+    ],
+    "priority": "H",
+    "asset": "GEN",
+    "description": "Availability and integrity disruption resulting in operational/financial loss."
+  },
+  {
+    "id": "T0837",
+    "name": "Loss of Protection",
+    "tactics": [
+      "TA0105"
+    ],
+    "priority": "C",
+    "asset": "SAFE",
+    "description": "Protective system functions compromised, risking equipment or personnel."
+  },
+  {
+    "id": "T0880",
+    "name": "Loss of Safety",
+    "tactics": [
+      "TA0105"
+    ],
+    "priority": "C",
+    "asset": "SAFE",
+    "description": "Safety system functions compromised, allowing unsafe process conditions."
+  },
+  {
+    "id": "T0829",
+    "name": "Loss of View",
+    "tactics": [
+      "TA0105"
+    ],
+    "priority": "C",
+    "asset": "HMI",
+    "description": "Sustained loss of visibility requiring local, hands-on operator intervention."
+  },
+  {
+    "id": "T0831",
+    "name": "Manipulation of Control",
+    "tactics": [
+      "TA0105"
+    ],
+    "priority": "C",
+    "asset": "PLC",
+    "description": "Physical process control manipulated via setpoint or parameter changes."
+  },
+  {
+    "id": "T0832",
+    "name": "Manipulation of View",
+    "tactics": [
+      "TA0105"
+    ],
+    "priority": "C",
+    "asset": "HMI",
+    "description": "Information reported to operators falsified while the real process diverges."
+  },
+  {
+    "id": "T0882",
+    "name": "Theft of Operational Information",
+    "tactics": [
+      "TA0105"
+    ],
+    "priority": "H",
+    "asset": "HIST",
+    "description": "Design documents, schedules, or operational data stolen for gain."
+  }
+]
