@@ -1,3 +1,5 @@
+import json
+from collections import Counter
 from sqlalchemy.orm import Session
 from database import engine
 from models import Tactic, Technique
@@ -17,6 +19,11 @@ TACTICS = [
     ("TA0105", "Impact"),
 ]
 
+EXPECTED_PER_TACTIC = {
+    "TA0108": 12, "TA0104": 10, "TA0110": 5, "TA0111": 2, "TA0103": 7, "TA0102": 5,
+    "TA0109": 6, "TA0100": 11, "TA0101": 3, "TA0107": 13, "TA0106": 4, "TA0105": 12,
+}
+
 def seed_tactics():
     with Session(engine) as session:
         for tactic_id, tactic_name in TACTICS:
@@ -26,22 +33,40 @@ def seed_tactics():
         session.commit()
     print("Tactics seeded successfully.")
 
+def load_techniques(path="techniques.json"):
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    validate_techniques(data)
+    return data
 
-TECHNIQUES = [
-    {"id": "T0866", "name": "Exploitation of Remote Services", "tactics": ["TA0108", "TA0109"],
-     "priority": "H", "asset": "ITOT", "description": "Software vulnerability exploited to abuse a remote service."},
-    {"id": "T0859", "name": "Valid Accounts", "tactics": ["TA0110", "TA0109"],
-     "priority": "H", "asset": "GEN", "description": "Stolen legitimate credentials used to bypass access controls."},
-    {"id": "T0836", "name": "Modify Parameter", "tactics": ["TA0106"],
-     "priority": "C", "asset": "PLC", "description": "Device parameters altered to change how actions execute."},
-    {"id": "T0843", "name": "Program Download", "tactics": ["TA0109"],
-     "priority": "C", "asset": "PLC", "description": "A user program transferred to a controller, overwriting logic."},
+def validate_techniques(data):
+    for t in data:
+        for field in ("id", "name", "tactics"):
+            if field not in t:
+                raise ValueError(f"Technique {t.get('id', '?')} is missing field '{field}'")
+        if not t["tactics"]:
+            raise ValueError(f"Technique {t['id']} has no tactics")
     
-]
+    known_tactics = {tactic_id for tactic_id, _ in TACTICS}
+    id_counts = Counter(t["id"] for t in data)
+    duplicates = [tech_id for tech_id, n in id_counts.items() if n > 1]
+    if duplicates:
+        raise ValueError(f"Duplicate technique IDs: {duplicates}")
+
+    actual = Counter(tactic_id for t in data for tactic_id in t["tactics"])
+
+    for t in data:
+        for tactic_id in t["tactics"]:
+            if tactic_id not in known_tactics:
+                raise ValueError(f"Unknown tactic {tactic_id} in technique {t['id']}")
+
+    for tactic_id, expected in EXPECTED_PER_TACTIC.items():
+        if actual[tactic_id] != expected:
+            raise ValueError(f"{tactic_id}: expected {expected} techniques, found {actual[tactic_id]}")
 
 def seed_techniques():
     with Session(engine) as session:
-        for item in TECHNIQUES:
+        for item in load_techniques():
             if session.get(Technique, item["id"]) is None:
                 technique = Technique(
                     id=item["id"],
